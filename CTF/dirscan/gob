@@ -1,0 +1,22 @@
+#! /bin/bash
+
+
+echo '----------------------------'
+echo -e 'Gob by xrchsploit \e[35m'
+
+echo ''
+echo 'Used for simple dir scan'
+
+echo -e 'Enjoy! \e[96m'
+
+read -p "IP or target Domain: " IP
+echo " "
+echo -e '\e[31m'
+echo "Dont include :// "
+echo -e '\e[96m'
+read -p "https or http: " http
+
+slash=://
+target="${http}${slash}${IP}/"
+
+gobuster dir -w /opt/Useful/dirlist/directory-list-2.3-medium.txt -e -u $target
